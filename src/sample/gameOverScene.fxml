@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GameOverController">
+   <children>
+      <Label layoutX="343.0" layoutY="124.0" text="Game Over!" />
+      <Button layoutX="213.0" layoutY="419.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="Main Menu" />
+      <Button fx:id="exitButton" layoutX="462.0" layoutY="419.0" mnemonicParsing="false" onAction="#exitGame" text="Exit" />
+      <Label layoutX="261.0" layoutY="184.0" text="All your settlers died, or you ran out of food!" />
+   </children>
+</AnchorPane>
