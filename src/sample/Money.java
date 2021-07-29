@@ -2,7 +2,7 @@ package sample;
 
 public class Money {
 
-    static int totalMoney = 600;
+    static int totalMoney = 1200;
 
     public static void setMoney(int updatedMoney) {
         totalMoney = updatedMoney;

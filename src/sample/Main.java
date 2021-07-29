@@ -31,9 +31,7 @@ add css styling to the entire game
 add pixel art to the game
 implement difficulty setting when player selects a settler
 add more events
-add losing condition (settlers = 0, gameOver, food = 0, gameOver, oxens = 0, gameOver)
-add miles travel counter
-when miles travelled reached a certain checkpoint, add in a visitTown event
+add losing conditions (settlers = 0, gameOver, food = 0, gameOver, oxens = 0, gameOver)
 add randomization to each events independently
 
  */

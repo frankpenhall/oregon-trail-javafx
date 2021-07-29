@@ -39,9 +39,6 @@ public class EventConclusionController {
                 e.printStackTrace();
             }
 
-            TripMenuController tripMenuController = loader.getController();
-            tripMenuController.setLabels();
-
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
