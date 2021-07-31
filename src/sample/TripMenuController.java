@@ -20,7 +20,7 @@ public class TripMenuController {
     private Parent root;
 
     @FXML
-    Label settlerLabel, milesTraveledLabel;
+    Label settlerLabel, milesTraveledLabel, locationLabel;
 
     @FXML
     Button exitButton;
@@ -42,6 +42,19 @@ public class TripMenuController {
     public void setLabels() {
         settlerLabel.setText(String.valueOf(playerSettlers));
         milesTraveledLabel.setText(String.valueOf(playerMiles));
+        if (playerMiles == 0) {
+            locationLabel.setText("Missouri");
+        } else if (playerMiles >= 25 && playerMiles < 200) {
+            locationLabel.setText("Kansas");
+        } else if (playerMiles >= 200 && playerMiles < 600) {
+            locationLabel.setText("Nebraska");
+        } else if (playerMiles >= 600 && playerMiles < 1100) {
+            locationLabel.setText("Wyoming");
+        } else if (playerMiles >= 1100 && playerMiles < 1600) {
+            locationLabel.setText("Idaho");
+        } else if (playerMiles >= 1600) {
+            locationLabel.setText("Oregon");
+        }
     }
 
     public void checkSupplies(ActionEvent event) {

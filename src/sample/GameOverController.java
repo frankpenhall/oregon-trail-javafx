@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,7 +21,23 @@ public class GameOverController {
     @FXML
     Button exitButton;
 
+    @FXML
+    Label gameOverLabel;
+
+    int[] playerInventory = Inventory.getInventory();
+
+    int playerSettlers = Settler.getSettlers();
+
     public void switchToMainMenu(ActionEvent event) {
+        playerInventory[0] = 0;
+        playerInventory[1] = 0;
+        playerInventory[2] = 0;
+        playerInventory[3] = 0;
+        playerInventory[4] = 0;
+        Money.setMoney(1200);
+        Settler.setSettlers(5);
+        Miles.setTotalMiles(0);
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("mainMenu.fxml"));
         try {
             root = loader.load();
@@ -41,5 +58,29 @@ public class GameOverController {
         stage.close();
     }
 
+    public void setUpScene() {
+        if (playerInventory[0] <= 0) {
+            gameOverLabel.setText("You ran out of food while traveling. You and your settlers all starved!");
+        }
 
+        else if (playerInventory[1] <= 0) {
+            gameOverLabel.setText("You have no more oxen left. You and your settlers are stranded!");
+        }
+
+        else if (playerInventory[2] <= 0) {
+            gameOverLabel.setText("You ran out of ammo while traveling.");
+        }
+
+        else if (playerInventory[3] <= 0) {
+            gameOverLabel.setText("You ran out of extra clothes for the winter.");
+        }
+
+        else if (playerInventory[4] <= 0) {
+            gameOverLabel.setText("You ran out of spare parts for your wagon.");
+        }
+
+        else if (playerSettlers <= 0) {
+            gameOverLabel.setText("All of your settlers perished!");
+        }
+    }
 }

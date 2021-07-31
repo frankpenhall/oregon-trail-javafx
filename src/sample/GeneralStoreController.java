@@ -26,11 +26,9 @@ public class GeneralStoreController {
     @FXML
     Label ammoCountLabel, clothesCountLabel, foodCountLabel, oxenCountLabel, sparePartsCountLabel;
 
-    Inventory inventory = new Inventory();
-    int[] playerInventory = inventory.getInventory();
+    int[] playerInventory = Inventory.getInventory();
 
-    Money money = new Money();
-    int playerMoney = money.getMoney();
+    int playerMoney = Money.getMoney();
 
     public void setLabels() {
         foodInvLabel.setText(String.valueOf(playerInventory[0]));
@@ -48,9 +46,8 @@ public class GeneralStoreController {
         else {
             playerMoney -= totalCost;
 
-
             System.out.println(playerMoney);
-            money.setMoney(playerMoney);
+            Money.setMoney(playerMoney);
 
             foodInv += foodCount;
             foodCountLabel.setText("0");
@@ -85,8 +82,8 @@ public class GeneralStoreController {
 
         setLabels();
 
-        inventory.setInventory(playerInventory);
-        inventory.printInventory();
+        Inventory.setInventory(playerInventory);
+        Inventory.printInventory();
     }
     public void incrementFood(ActionEvent event) {
         foodCount++;

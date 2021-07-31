@@ -12,7 +12,7 @@ public class Inventory {
         return inventory;
     }
 
-    public void printInventory() {
+    public static void printInventory() {
         for(int i = 0; i < 5; i++){
             System.out.println(inventory[i]);
         }

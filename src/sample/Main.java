@@ -26,12 +26,15 @@ public class Main extends Application {
     }
 }
 /*
-todo
-add css styling to the entire game
-add pixel art to the game
+
+Fix User Interface design (buttons, text)
+Add CSS Styling
+Add Pixel Art
 implement difficulty setting when player selects a settler
-add more events
-add losing conditions (settlers = 0, gameOver, food = 0, gameOver, oxens = 0, gameOver)
-add randomization to each events independently
+Add more events (80 events total?)
+Have Player Stats displayed at the gameOver and winGame
+Implement PlayerScore, player gets points for how far they get and their stats (1.5x points/2x points for medium/hard difficulty)
+Add HelpScene
+Rename classes and files to better understandability
 
  */

@@ -2,21 +2,58 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TripMenuController">
    <children>
-      <Label layoutX="348.0" layoutY="108.0" text="Trip Menu" />
-      <Button layoutX="104.0" layoutY="456.0" mnemonicParsing="false" onAction="#continueTrail" text="Continue on Trail" />
-      <Button layoutX="402.0" layoutY="456.0" mnemonicParsing="false" onAction="#checkSupplies" text="Check Supplies" />
-      <Button layoutX="552.0" layoutY="456.0" mnemonicParsing="false" onAction="#viewMap" text="Look at Map" />
-      <Label layoutX="169.0" layoutY="215.0" text="Location:" />
-      <Label layoutX="237.0" layoutY="215.0" text="Independence, Missouri" />
-      <Button fx:id="exitButton" layoutX="349.0" layoutY="514.0" mnemonicParsing="false" onAction="#exitGame" text="Exit" />
-      <Button layoutX="261.0" layoutY="456.0" mnemonicParsing="false" onAction="#rest" text="Stop to rest" />
-      <Label layoutX="172.0" layoutY="190.0" text="Settlers:" />
-      <Label fx:id="settlerLabel" layoutX="237.0" layoutY="190.0" text="0" />
-      <Label layoutX="153.0" layoutY="250.0" text="Miles Traveled:" />
-      <Label fx:id="milesTraveledLabel" layoutX="261.0" layoutY="250.0" text="0" />
+      <Label layoutX="348.0" layoutY="88.0" text="Trip Menu" />
+      <GridPane alignment="CENTER" layoutX="63.0" layoutY="457.0" prefHeight="62.0" prefWidth="624.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#continueTrail" text="Continue on Trail" />
+            <Button mnemonicParsing="false" onAction="#rest" text="Hunt" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" onAction="#checkSupplies" text="Check Supplies" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" onAction="#viewMap" text="Look at Map" GridPane.columnIndex="3" />
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exitGame" text="Exit" GridPane.columnIndex="4" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="275.0" layoutY="336.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Settlers:" />
+            <Label text="Location:" GridPane.rowIndex="1" />
+            <Label text="Miles Traveled:" GridPane.rowIndex="2" />
+            <Label fx:id="settlerLabel" text="0" GridPane.columnIndex="1" />
+            <Label fx:id="locationLabel" text="---" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="milesTraveledLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <ImageView fitHeight="168.0" fitWidth="254.0" layoutX="248.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/wagonMenu.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
