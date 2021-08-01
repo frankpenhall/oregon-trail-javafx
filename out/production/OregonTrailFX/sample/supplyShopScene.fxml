@@ -9,18 +9,18 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SupplyShopController">
    <children>
-      <Label layoutX="339.0" layoutY="97.0" text="General Store" />
-      <Label layoutX="126.0" layoutY="212.0" text="Inventory" />
-      <Label layoutX="521.0" layoutY="203.0" text="Shop" />
-      <Button layoutX="411.0" layoutY="456.0" mnemonicParsing="false" onAction="#purchaseSupplies" text="Buy" />
-      <Button layoutX="285.0" layoutY="456.0" mnemonicParsing="false" onAction="#switchToTripMenu" text="Continue" />
-      <Label layoutX="456.0" layoutY="402.0" text="Total Cost:" />
-      <Label fx:id="totalCostLabel" layoutX="563.0" layoutY="402.0" text="0" />
-      <Label layoutX="237.0" layoutY="129.0" text="Buy your supplies here before starting your journey!" />
-      <GridPane layoutX="77.0" layoutY="244.0" prefHeight="182.0" prefWidth="147.0">
+      <Label alignment="CENTER" layoutX="-1.0" layoutY="75.0" prefHeight="23.0" prefWidth="750.0" text="General Store" />
+      <Label layoutX="138.0" layoutY="200.0" text="Inventory" />
+      <Label layoutX="517.0" layoutY="200.0" text="Shop" />
+      <Button layoutX="447.0" layoutY="475.0" mnemonicParsing="false" onAction="#purchaseSupplies" text="Buy" />
+      <Button layoutX="242.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToTripMenu" text="Continue" />
+      <Label layoutX="386.0" layoutY="414.0" text="Total Cost:" />
+      <Label fx:id="totalCostLabel" layoutX="606.0" layoutY="414.0" text="0" />
+      <Label alignment="CENTER" layoutY="110.0" prefHeight="23.0" prefWidth="750.0" text="Buy your supplies here before starting your journey!" />
+      <GridPane layoutX="77.0" layoutY="244.0" prefHeight="182.0" prefWidth="223.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.00001220703126" minWidth="10.0" prefWidth="136.00001220703126" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="69.199951171875" minWidth="10.0" prefWidth="34.399987792968716" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -45,12 +45,12 @@
             <Label fx:id="sparePartsInvLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <GridPane layoutX="408.0" layoutY="244.0" prefHeight="152.0" prefWidth="253.0">
+      <GridPane layoutX="386.0" layoutY="244.0" prefHeight="152.0" prefWidth="305.0">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.79998779296875" minWidth="10.0" prefWidth="100.79998779296875" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.79998779296875" minWidth="10.0" prefWidth="99.20001220703125" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.39996337890625" minWidth="10.0" prefWidth="150.79998779296875" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.79998779296875" minWidth="10.0" prefWidth="46.00001220703126" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="135.800048828125" minWidth="10.0" prefWidth="92.5999755859375" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="84.5999755859375" minWidth="10.0" prefWidth="46.199951171875" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />

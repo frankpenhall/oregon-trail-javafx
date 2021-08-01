@@ -8,10 +8,10 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="751.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TownspeopleController">
    <children>
-      <Label layoutX="340.0" layoutY="128.0" text="Townspeople" />
-      <Button layoutX="354.0" layoutY="440.0" mnemonicParsing="false" onAction="#switchToVisit" text="Okay" />
-      <Label layoutX="226.0" layoutY="395.0" text="You chat with some of the locals and drink at the Saloon" />
-      <ImageView fitHeight="190.0" fitWidth="231.0" layoutX="260.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+      <Label alignment="CENTER" layoutY="104.0" prefHeight="23.0" prefWidth="751.0" text="Townspeople" />
+      <Button layoutX="318.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToVisit" text="Continue" />
+      <Label alignment="CENTER" layoutY="393.0" prefHeight="23.0" prefWidth="751.0" text="You chat with some of the locals and drink at the Saloon" />
+      <ImageView fitHeight="190.0" fitWidth="231.0" layoutX="261.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/saloon.png" />
          </image>

@@ -11,17 +11,17 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GameOverController">
    <children>
-      <Label layoutX="344.0" layoutY="104.0" text="Game Over!" />
-      <Label fx:id="gameOverLabel" alignment="CENTER" layoutX="231.0" layoutY="137.0" text="Game Over Message" />
+      <Label alignment="CENTER" layoutY="75.0" prefHeight="23.0" prefWidth="750.0" text="Game Over!" />
+      <Label fx:id="gameOverLabel" alignment="CENTER" layoutY="119.0" prefHeight="23.0" prefWidth="750.0" text="Game Over Message" />
       <ImageView fitHeight="213.0" fitWidth="289.0" layoutX="231.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/wagonBW.png" />
          </image>
       </ImageView>
-      <GridPane layoutX="275.0" layoutY="478.0">
+      <GridPane layoutX="246.0" layoutY="475.0" prefHeight="30.0" prefWidth="258.0">
         <columnConstraints>
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="134.5999755859375" minWidth="10.0" prefWidth="134.5999755859375" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="124.20001220703125" minWidth="10.0" prefWidth="123.4000244140625" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />

@@ -6,15 +6,25 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PickSettlerController">
    <children>
-      <Label layoutX="346.0" layoutY="81.0" text="Pick Settler" />
-      <Button layoutX="269.0" layoutY="483.0" mnemonicParsing="false" onAction="#switchToSupplyShop" text="Continue" />
-      <Button layoutX="407.0" layoutY="483.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="Back to Menu" />
-      <RadioButton layoutX="131.0" layoutY="394.0" mnemonicParsing="false" text="Banker" />
-      <RadioButton layoutX="339.0" layoutY="394.0" mnemonicParsing="false" text="Carpenter" />
-      <RadioButton layoutX="560.0" layoutY="394.0" mnemonicParsing="false" text="Farmer" />
+      <Label alignment="CENTER" layoutY="75.0" prefHeight="23.0" prefWidth="750.0" text="Pick Settler" textAlignment="CENTER" />
+      <Button layoutX="202.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToSupplyShop" text="Continue" />
+      <Button layoutX="407.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="Back to Menu" />
+      <RadioButton layoutX="117.0" layoutY="394.0" mnemonicParsing="false" text="Banker" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></RadioButton>
+      <RadioButton layoutX="320.0" layoutY="394.0" mnemonicParsing="false" text="Carpenter" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></RadioButton>
+      <RadioButton layoutX="545.0" layoutY="394.0" mnemonicParsing="false" text="Farmer" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></RadioButton>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="85.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/banker.png" />

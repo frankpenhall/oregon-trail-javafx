@@ -71,8 +71,9 @@ public class TripMenuController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        //String css = this.getClass().getResource("sample.css").toExternalForm();
-        //scene.getStylesheets().add(css);
+        stage.setResizable(false);
+        String css = this.getClass().getResource("sample.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.show();
     }
 
@@ -87,8 +88,9 @@ public class TripMenuController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        //String css = this.getClass().getResource("sample.css").toExternalForm();
-        //scene.getStylesheets().add(css);
+        stage.setResizable(false);
+        String css = this.getClass().getResource("sample.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.show();
     }
 
@@ -110,8 +112,9 @@ public class TripMenuController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        //String css = this.getClass().getResource("sample.css").toExternalForm();
-        //scene.getStylesheets().add(css);
+        stage.setResizable(false);
+        String css = this.getClass().getResource("sample.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.show();
 
     }

@@ -11,17 +11,57 @@
    <children>
       <AnchorPane layoutY="2.0" prefHeight="600.0" prefWidth="750.0">
          <children>
-            <Label layoutX="127.0" layoutY="182.0" text="Inventory" />
-            <Label layoutX="535.0" layoutY="182.0" text="Shop" />
-            <Label layoutX="341.0" layoutY="116.0" text="Buy Supplies" />
-            <Button layoutX="415.0" layoutY="453.0" mnemonicParsing="false" onAction="#purchaseSupplies" text="Buy" />
-            <Button layoutX="276.0" layoutY="453.0" mnemonicParsing="false" onAction="#switchToVisit2" text="Continue" />
+            <Label layoutX="138.0" layoutY="200.0" text="Inventory" />
+            <Label layoutX="517.0" layoutY="200.0" text="Shop" />
+            <Label alignment="CENTER" layoutY="110.0" prefHeight="23.0" prefWidth="750.0" text="Buy Supplies" />
+            <Button layoutX="445.0" layoutY="475.0" mnemonicParsing="false" onAction="#purchaseSupplies" text="Buy" />
+            <Button layoutX="237.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToVisit2" text="Continue" />
+            <Label alignment="CENTER" layoutX="1.0" layoutY="75.0" prefHeight="23.0" prefWidth="750.0" text="General Store" />
+            <GridPane layoutX="386.0" layoutY="244.0" prefHeight="152.0" prefWidth="305.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.999951171875" minWidth="10.0" prefWidth="137.60001220703126" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="107.99996337890623" minWidth="10.0" prefWidth="55.99995117187498" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="96.60000000000002" minWidth="10.0" prefWidth="64.800048828125" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="88.199951171875" minWidth="10.0" prefWidth="48.600048828124955" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Food" />
+                  <Label text="Clothes" GridPane.rowIndex="1" />
+                  <Label text="Ammo" GridPane.rowIndex="2" />
+                  <Label prefHeight="23.0" prefWidth="135.0" text="Spare Parts" GridPane.rowIndex="3" />
+                  <Label text="Oxen" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#decrementFood" text="&lt;" GridPane.columnIndex="1" />
+                  <Label fx:id="foodCountLabel" text="0" GridPane.columnIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#incrementFood" text="&gt;" GridPane.columnIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#decrementClothes" text="&lt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#decrementAmmo" text="&lt;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#decrementSpareParts" text="&lt;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#decrementOxen" text="&lt;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="clothesCountLabel" text="0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label fx:id="ammoCountLabel" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Label fx:id="sparePartsCountLabel" text="0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label fx:id="oxenCountLabel" text="0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#incrementClothes" text="&gt;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#incrementAmmo" text="&gt;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#incrementSpareParts" text="&gt;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#incrementOxen" text="&gt;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+            <Label layoutX="384.0" layoutY="413.0" text="Total Cost:" />
+            <Label fx:id="totalCostLabel" layoutX="605.0" layoutY="413.0" text="0" />
          </children>
       </AnchorPane>
-      <GridPane layoutX="95.0" layoutY="231.0" prefHeight="182.0" prefWidth="156.0">
+      <GridPane layoutX="77.0" layoutY="244.0" prefHeight="182.0" prefWidth="223.0">
          <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.79998779296875" minWidth="10.0" prefWidth="139.8" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="106.39996337890625" minWidth="10.0" prefWidth="83.0" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -46,45 +86,5 @@
             <Label fx:id="moneyLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
-      <GridPane layoutX="423.0" layoutY="229.0" prefHeight="149.0" prefWidth="246.0">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.4000244140625" minWidth="10.0" prefWidth="88.4000244140625" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="73.19995117187501" minWidth="10.0" prefWidth="73.19995117187501" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="81.20001220703126" minWidth="10.0" prefWidth="69.00004882812499" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="88.199951171875" minWidth="10.0" prefWidth="76.199951171875" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         </rowConstraints>
-         <children>
-            <Label text="Food" />
-            <Label text="Clothes" GridPane.rowIndex="1" />
-            <Label text="Ammo" GridPane.rowIndex="2" />
-            <Label prefHeight="18.0" prefWidth="80.0" text="Spare Parts" GridPane.rowIndex="3" />
-            <Label text="Oxen" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" onAction="#decrementFood" text="&lt;" GridPane.columnIndex="1" />
-            <Label fx:id="foodCountLabel" text="0" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" onAction="#incrementFood" text="&gt;" GridPane.columnIndex="3" />
-            <Button mnemonicParsing="false" onAction="#decrementClothes" text="&lt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#decrementAmmo" text="&lt;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#decrementSpareParts" text="&lt;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#decrementOxen" text="&lt;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label fx:id="clothesCountLabel" text="0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label fx:id="ammoCountLabel" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label fx:id="sparePartsCountLabel" text="0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label fx:id="oxenCountLabel" text="0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" onAction="#incrementClothes" text="&gt;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#incrementAmmo" text="&gt;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#incrementSpareParts" text="&gt;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#incrementOxen" text="&gt;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-         </children>
-      </GridPane>
-      <Label layoutX="341.0" layoutY="88.0" text="General Store" />
-      <Label layoutX="485.0" layoutY="404.0" text="Total Cost:" />
-      <Label fx:id="totalCostLabel" layoutX="580.0" layoutY="404.0" text="0" />
    </children>
 </AnchorPane>

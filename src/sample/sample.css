@@ -1,0 +1,23 @@
+.root {
+    -fx-background-color: #050505;
+}
+
+.label {
+    -fx-font-size: 20;
+    -fx-font-family: "Consolas";
+    /*-fx-alignment: center;*/
+    -fx-text-fill: #F0F0F0
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #F0F0F0;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 20;
+    /*-fx-padding: 10 10 10 10;
+    -fx-alignment: center;*/
+}
+
+.button:hover {
+ -fx-text-fill: #4EEB1A;
+}

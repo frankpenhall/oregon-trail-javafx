@@ -2,7 +2,7 @@ package sample;
 
 public class Event {
 
-    String[] eventArr = new String[11];
+    String[] eventArr = new String[12];
     String eventTitle = "Wild Wolves";
     String eventDescription = "While traveling, a pack of wild wolves prowl on your wagon, threatening you and your travelers.";
     String choice1 = "1. Toss a piece of meat at the pack of wolves to distract them [-5 Food]";
@@ -17,6 +17,8 @@ public class Event {
     String choice2Conclusion = "You shoot at the closest wolf, killing it. The other wolves scatter away. [-5 Ammo]";
     String choice3Conclusion = "The wolves attack one of your oxen injuring it greatly. You decide you leave that ox behind and escape while the wolves are busy eating it. [-1 Oxen]";
 
+    String imageURL = "/img/event1.png";
+
     public void makeArray() {
         eventArr[0] = eventTitle;
         eventArr[1] = eventDescription;
@@ -29,6 +31,7 @@ public class Event {
         eventArr[8] = choice1Conclusion;
         eventArr[9] = choice2Conclusion;
         eventArr[10] = choice3Conclusion;
+        eventArr[11] = imageURL;
     }
 
     public String[] getEventArray() {
@@ -38,7 +41,7 @@ public class Event {
 
 class Event2 {
 
-    String[] eventArr = new String[11];
+    String[] eventArr = new String[12];
     String eventTitle = "River";
     String eventDescription = "Your wagon comes across a large river. There's a few options on how to traverse the river.";
     String choice1 = "1. Better be safe than sorry. You pay for a ferry across the river [-50 Money]";
@@ -53,6 +56,9 @@ class Event2 {
     String choice2Conclusion = "During the crossing your wagon turns sideways and you lose some supplies. [-2 clothes]";
     String choice3Conclusion = "The force of the river was too strong. A settler falls and gets washed down the river. [-1 settler]";
 
+    String imageURL = "/img/event2.png";
+
+
     public void makeArray() {
         eventArr[0] = eventTitle;
         eventArr[1] = eventDescription;
@@ -65,6 +71,8 @@ class Event2 {
         eventArr[8] = choice1Conclusion;
         eventArr[9] = choice2Conclusion;
         eventArr[10] = choice3Conclusion;
+        eventArr[11] = imageURL;
+
     }
 
     public String[] getEventArray() {
@@ -75,7 +83,7 @@ class Event2 {
 
 class Event3 {
 
-    String[] eventArr = new String[11];
+    String[] eventArr = new String[12];
 
     String eventTitle = "Shiny";
     String eventDescription = "While taking a break, you find some shade and sit down. You spot a reflection coming from the sand";
@@ -91,6 +99,9 @@ class Event3 {
     String choice2Conclusion = "After digging a little, you find a nugget of gold ore! [+50 Money]";
     String choice3Conclusion = "You continue on the trail.";
 
+    String imageURL = "/img/event3.png";
+
+
     public void makeArray() {
         eventArr[0] = eventTitle;
         eventArr[1] = eventDescription;
@@ -103,6 +114,8 @@ class Event3 {
         eventArr[8] = choice1Conclusion;
         eventArr[9] = choice2Conclusion;
         eventArr[10] = choice3Conclusion;
+        eventArr[11] = imageURL;
+
     }
 
     public String[] getEventArray() {
@@ -112,7 +125,7 @@ class Event3 {
 
 class Event4 {
 
-    String[] eventArr = new String[11];
+    String[] eventArr = new String[12];
 
     String eventTitle = "Owl";
     String eventDescription = "While sleeping, the hooting of an owl wakes you up. You take a look outside the wagon.";
@@ -128,6 +141,9 @@ class Event4 {
     String choice2Conclusion = "You try to hunt for the owl. You carefully approach the owl and capture it. [+5 Food]";
     String choice3Conclusion = "You wake to see that the owl ate some food from the food sack somehow [-2 Food]";
 
+    String imageURL = "/img/event4.png";
+
+
     public void makeArray() {
         eventArr[0] = eventTitle;
         eventArr[1] = eventDescription;
@@ -140,6 +156,8 @@ class Event4 {
         eventArr[8] = choice1Conclusion;
         eventArr[9] = choice2Conclusion;
         eventArr[10] = choice3Conclusion;
+        eventArr[11] = imageURL;
+
     }
 
     public String[] getEventArray() {
@@ -149,7 +167,7 @@ class Event4 {
 
 class Event5 {
 
-    String[] eventArr = new String[11];
+    String[] eventArr = new String[12];
 
     String eventTitle = "Trader";
     String eventDescription = "You come up to another wagon. They are willing to trade!";
@@ -165,6 +183,9 @@ class Event5 {
     String choice2Conclusion = "[+2 Clothes for -10 Ammo]";
     String choice3Conclusion = "You do not trade and continue moving";
 
+    String imageURL = "/img/event5.png";
+
+
     public void makeArray() {
         eventArr[0] = eventTitle;
         eventArr[1] = eventDescription;
@@ -177,6 +198,8 @@ class Event5 {
         eventArr[8] = choice1Conclusion;
         eventArr[9] = choice2Conclusion;
         eventArr[10] = choice3Conclusion;
+        eventArr[11] = imageURL;
+
     }
 
     public String[] getEventArray() {
@@ -186,7 +209,7 @@ class Event5 {
 
 class Event6 {
 
-    String[] eventArr = new String[11];
+    String[] eventArr = new String[12];
 
     String eventTitle = "Hunt";
     String eventDescription = "It's time to do some hunting!";
@@ -202,6 +225,9 @@ class Event6 {
     String choice2Conclusion = "You hunt down for a small animal! [-5 Ammo] [+10 Food]";
     String choice3Conclusion = "You continue on the trail";
 
+    String imageURL = "/img/wolves.png";
+
+
     public void makeArray() {
         eventArr[0] = eventTitle;
         eventArr[1] = eventDescription;
@@ -214,6 +240,8 @@ class Event6 {
         eventArr[8] = choice1Conclusion;
         eventArr[9] = choice2Conclusion;
         eventArr[10] = choice3Conclusion;
+        eventArr[11] = imageURL;
+
     }
 
     public String[] getEventArray() {

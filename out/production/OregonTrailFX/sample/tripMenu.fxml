@@ -11,14 +11,14 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TripMenuController">
    <children>
-      <Label layoutX="348.0" layoutY="88.0" text="Trip Menu" />
-      <GridPane alignment="CENTER" layoutX="63.0" layoutY="457.0" prefHeight="62.0" prefWidth="624.0">
+      <Label alignment="CENTER" layoutY="75.0" prefHeight="23.0" prefWidth="750.0" text="Trip Menu" />
+      <GridPane alignment="CENTER" layoutY="475.0" prefHeight="62.0" prefWidth="750.0">
         <columnConstraints>
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="228.8" minWidth="10.0" prefWidth="228.8" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="132.5999755859375" minWidth="10.0" prefWidth="89.59999999999997" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="234.600048828125" minWidth="10.0" prefWidth="194.40001220703118" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="189.2000122070313" minWidth="10.0" prefWidth="134.5999755859375" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="143.60003662109375" minWidth="10.0" prefWidth="102.20000000000005" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
@@ -27,14 +27,14 @@
             <Button mnemonicParsing="false" onAction="#continueTrail" text="Continue on Trail" />
             <Button mnemonicParsing="false" onAction="#rest" text="Hunt" GridPane.columnIndex="1" />
             <Button mnemonicParsing="false" onAction="#checkSupplies" text="Check Supplies" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" onAction="#viewMap" text="Look at Map" GridPane.columnIndex="3" />
+            <Button mnemonicParsing="false" onAction="#viewMap" text="View Map" GridPane.columnIndex="3" />
             <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exitGame" text="Exit" GridPane.columnIndex="4" />
          </children>
       </GridPane>
-      <GridPane layoutX="275.0" layoutY="336.0">
+      <GridPane layoutX="242.0" layoutY="336.0" prefHeight="91.0" prefWidth="314.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.5999755859375" minWidth="10.0" prefWidth="156.79998779296875" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="122.20001220703125" minWidth="10.0" prefWidth="113.60001220703123" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />

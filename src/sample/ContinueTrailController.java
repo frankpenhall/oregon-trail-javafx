@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,10 +24,13 @@ public class ContinueTrailController {
     String eventOutCome;
     int choice;
 
-    String[] eventArr = new String[11];
+    String[] eventArr = new String[12];
 
     @FXML
     Label eventTitleLabel, eventDescriptionLabel, option1Label, option2Label, option3Label;
+
+    @FXML
+    ImageView eventImage;
 
     int[] playerInventory = Inventory.getInventory();
 
@@ -54,8 +59,9 @@ public class ContinueTrailController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        //String css = this.getClass().getResource("sample.css").toExternalForm();
-        //scene.getStylesheets().add(css);
+        stage.setResizable(false);
+        String css = this.getClass().getResource("sample.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.show();
     }
 
@@ -77,8 +83,9 @@ public class ContinueTrailController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        //String css = this.getClass().getResource("sample.css").toExternalForm();
-        //scene.getStylesheets().add(css);
+        stage.setResizable(false);
+        String css = this.getClass().getResource("sample.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.show();
     }
 
@@ -100,8 +107,9 @@ public class ContinueTrailController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        //String css = this.getClass().getResource("sample.css").toExternalForm();
-        //scene.getStylesheets().add(css);
+        stage.setResizable(false);
+        String css = this.getClass().getResource("sample.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.show();
     }
 
@@ -113,6 +121,10 @@ public class ContinueTrailController {
         option1Label.setText(eventArr[2]);
         option2Label.setText(eventArr[3]);
         option3Label.setText(eventArr[4]);
+        Image image = new Image(getClass().getResourceAsStream(eventArr[11]));
+        eventImage.setFitHeight(200);
+        eventImage.setFitWidth(200);
+        eventImage.setImage(image);
     }
 
     public void setUpEvent() {

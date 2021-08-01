@@ -15,10 +15,12 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         //scene.getStylesheets().add(getClass().getResource("sample.css").toExternalForm());
-        //String css = this.getClass().getResource("sample.css").toExternalForm();
-        //scene.getStylesheets().add(css);
+        stage.setResizable(false);
+        String css = this.getClass().getResource("sample.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.show();
-        //System.out.println(javafx.scene.text.Font.getFamilies());
+
+        System.out.println(javafx.scene.text.Font.getFamilies());
     }
 
     public static void main(String[] args) {
@@ -27,11 +29,10 @@ public class Main extends Application {
 }
 /*
 
-Fix User Interface design (buttons, text)
-Add CSS Styling
-Add Pixel Art
+Fix event text and labels
 implement difficulty setting when player selects a settler
 Add more events (80 events total?)
+Implement Hunt Mechanic
 Have Player Stats displayed at the gameOver and winGame
 Implement PlayerScore, player gets points for how far they get and their stats (1.5x points/2x points for medium/hard difficulty)
 Add HelpScene
