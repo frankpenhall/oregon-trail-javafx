@@ -31,5 +31,6 @@
             <Button mnemonicParsing="false" onAction="#switchToMainMenu" text="Main Menu" />
          </children>
       </GridPane>
+      <Label fx:id="gameOverLabel2" alignment="CENTER" layoutY="142.0" prefHeight="23.0" prefWidth="750.0" text="Game Over Message" />
    </children>
 </AnchorPane>

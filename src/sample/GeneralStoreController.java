@@ -166,7 +166,7 @@ public class GeneralStoreController {
     }
 
     public void switchToVisit(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlement.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlementScene.fxml"));
         try {
             root = loader.load();
         } catch (IOException e) {
@@ -183,7 +183,7 @@ public class GeneralStoreController {
     }
 
     public void switchToVisit2(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlement2.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlementScene2.fxml"));
         try {
             root = loader.load();
         } catch (IOException e) {

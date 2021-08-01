@@ -90,7 +90,7 @@ public class VisitSettlementController {
     }
 
     public void switchToTripMenu(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("tripMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("tripMenuScene.fxml"));
         try {
             root = loader.load();
         } catch (IOException e) {

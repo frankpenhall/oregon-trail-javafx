@@ -6,7 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,7 +20,7 @@ public class WinGameController {
     int[] playerInventory = Inventory.getInventory();
 
     @FXML
-    Label exitButton;
+    Button exitButton;
 
     public void switchToMainMenu(ActionEvent event) {
         playerInventory[0] = 0;
@@ -32,7 +32,7 @@ public class WinGameController {
         Settler.setSettlers(5);
         Miles.setTotalMiles(0);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("mainMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("mainMenuScene.fxml"));
         try {
             root = loader.load();
         } catch (IOException e) {

@@ -19,7 +19,7 @@ public class TownspeopleController {
     int playerSettlers = settlers.getSettlers();
 
     public void noSettler(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlement.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlementScene.fxml"));
         try {
             root = loader.load();
         } catch (IOException e) {
@@ -39,7 +39,7 @@ public class TownspeopleController {
         playerSettlers += 1;
         settlers.setSettlers(playerSettlers);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlement2.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlementScene2.fxml"));
         try {
             root = loader.load();
         } catch (IOException e) {
@@ -56,7 +56,7 @@ public class TownspeopleController {
     }
 
     public void switchToVisit(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlement2.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlementScene2.fxml"));
         try {
             root = loader.load();
         } catch (IOException e) {

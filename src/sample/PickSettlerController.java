@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 
 public class PickSettlerController {
@@ -39,7 +38,7 @@ public class PickSettlerController {
     }
 
     public void switchToMainMenu(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("mainMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("mainMenuScene.fxml"));
         try {
             root = loader.load();
         } catch (IOException e) {

@@ -11,7 +11,6 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Random;
 
 public class TripMenuController {
 
@@ -99,15 +98,15 @@ public class TripMenuController {
     }
 
     public void continueTrail(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("continueTrail.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("eventScene.fxml"));
         try {
             root = loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        ContinueTrailController continueTrailController = loader.getController();
-        continueTrailController.setLabels();
+        EventSceneController eventSceneController = loader.getController();
+        eventSceneController.setLabels();
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -116,21 +115,5 @@ public class TripMenuController {
         String css = this.getClass().getResource("sample.css").toExternalForm();
         scene.getStylesheets().add(css);
         stage.show();
-
     }
-
-    /*
-    public void setUpEvent() {
-        System.out.println(x);
-        if (x == 0) {
-            System.out.println("Event 1 Selected");
-            Event event1 = new Event();
-        }
-        else if (x == 1) {
-            System.out.println("Event 2 Selected");
-            Event2 event2 = new Event2();
-        }
-    }
-    */
-
 }

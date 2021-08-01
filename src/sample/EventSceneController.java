@@ -15,19 +15,19 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 
-public class ContinueTrailController {
+public class EventSceneController {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
 
-    String eventOutCome;
+    String[] eventOutCome = new String[2];
     int choice;
 
-    String[] eventArr = new String[12];
+    String[] eventArr = new String[16];
 
     @FXML
-    Label eventTitleLabel, eventDescriptionLabel, option1Label, option2Label, option3Label;
+    Label eventTitleLabel, eventDescriptionLabel, eventDescriptionLabel2, option1Label, option2Label, option3Label;
 
     @FXML
     ImageView eventImage;
@@ -118,10 +118,11 @@ public class ContinueTrailController {
         //System.out.println("Setting labels");
         eventTitleLabel.setText(eventArr[0]);
         eventDescriptionLabel.setText(eventArr[1]);
-        option1Label.setText(eventArr[2]);
-        option2Label.setText(eventArr[3]);
-        option3Label.setText(eventArr[4]);
-        Image image = new Image(getClass().getResourceAsStream(eventArr[11]));
+        eventDescriptionLabel2.setText(eventArr[2]);
+        option1Label.setText(eventArr[3]);
+        option2Label.setText(eventArr[4]);
+        option3Label.setText(eventArr[5]);
+        Image image = new Image(getClass().getResourceAsStream(eventArr[15]));
         eventImage.setFitHeight(200);
         eventImage.setFitWidth(200);
         eventImage.setImage(image);
@@ -171,25 +172,26 @@ public class ContinueTrailController {
         String[] strArr;
         if (choice == 1) {
             //System.out.println("You picked 1");
-            System.out.println(eventArr[5]);
-            strArr = eventArr[5].split(" ", 4);
-            System.out.println(Arrays.toString(strArr));
-            eventOutCome = eventArr[8];
-
-        } else if (choice == 2) {
-            //System.out.println("You picked 2");
             System.out.println(eventArr[6]);
             strArr = eventArr[6].split(" ", 4);
             System.out.println(Arrays.toString(strArr));
-            eventOutCome = eventArr[9];
+            eventOutCome[0] = eventArr[9];
+            eventOutCome[1] = eventArr[10];
 
-        } else {
-            //System.out.println("You picked 3");
+        } else if (choice == 2) {
+            //System.out.println("You picked 2");
             System.out.println(eventArr[7]);
             strArr = eventArr[7].split(" ", 4);
             System.out.println(Arrays.toString(strArr));
-            eventOutCome = eventArr[10];
-
+            eventOutCome[0] = eventArr[11];
+            eventOutCome[1] = eventArr[12];
+        } else {
+            //System.out.println("You picked 3");
+            System.out.println(eventArr[8]);
+            strArr = eventArr[8].split(" ", 4);
+            System.out.println(Arrays.toString(strArr));
+            eventOutCome[0] = eventArr[13];
+            eventOutCome[1] = eventArr[14];
         }
 
         for (int i=0; i<3; i += 2) {

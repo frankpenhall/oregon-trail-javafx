@@ -18,7 +18,7 @@ public class EventConclusionController {
     private Parent root;
 
     @FXML
-    Label eventConclusionLabel;
+    Label eventConclusionLabel, eventConclusionLabel2;
 
     int playerMiles = Miles.getTotalMiles();
 
@@ -26,8 +26,9 @@ public class EventConclusionController {
 
     int playerSettlers = Settler.getSettlers();
 
-    public void setLabels(String eventOutcome) {
-        eventConclusionLabel.setText(eventOutcome);
+    public void setLabels(String[] eventOutcome) {
+        this.eventConclusionLabel.setText(eventOutcome[0]);
+        this.eventConclusionLabel2.setText(eventOutcome[1]);
     }
 
     public void switchToTripMenu(ActionEvent event) {
@@ -35,7 +36,7 @@ public class EventConclusionController {
         Miles.setTotalMiles(playerMiles);
 
         if (playerMiles == 150 || playerMiles == 300 || playerMiles == 450 || playerMiles == 600 || playerMiles == 750 || playerMiles == 900 || playerMiles == 1050 || playerMiles == 1200 || playerMiles == 1350 || playerMiles == 1500 || playerMiles == 1650 || playerMiles == 1800 || playerMiles == 1950) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlement.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlementScene.fxml"));
             try {
                 root = loader.load();
             } catch (IOException e) {
@@ -46,6 +47,7 @@ public class EventConclusionController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("winGameScene.fxml"));
             try {
                 root = loader.load();
+                System.out.println("I'm here");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -61,7 +63,7 @@ public class EventConclusionController {
             gameOverController.setUpScene();
         }
         else {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("tripMenu.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("tripMenuScene.fxml"));
             try {
                 root = loader.load();
             } catch (IOException e) {
