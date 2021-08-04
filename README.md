@@ -7,8 +7,6 @@ In this current version most of the mechanics have been implemented but there is
 ##### To Do:
 - Implement different difficulties based on the settler chosen
 - Add more events
-- Implement the Hunting mechanic
-- Add in the Help scene on the Main Menu
 - Implement a PlayerScore, player earns points throughout the game
 - Add in the View Map function
 - Display player stats at the end of the game
