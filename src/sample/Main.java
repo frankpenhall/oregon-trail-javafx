@@ -29,13 +29,11 @@ public class Main extends Application {
 }
 /*
 
-Fix event text and labels
 implement difficulty setting when player selects a settler
-Add more events (80 events total?)
+Add more events (13/50 events total)
 Implement Hunt Mechanic
 Have Player Stats displayed at the gameOver and winGame
 Implement PlayerScore, player gets points for how far they get and their stats (1.5x points/2x points for medium/hard difficulty)
-Add HelpScene
 Rename classes and files to better understandability
 
  */

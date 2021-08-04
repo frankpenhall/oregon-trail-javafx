@@ -10,7 +10,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SceneController">
    <children>
       <Button layoutX="132.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToSettlerSetup" text="Play" />
-      <Button layoutX="354.0" layoutY="475.0" mnemonicParsing="false" text="Help" />
+      <Button layoutX="354.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToHelpScene" text="Help" />
       <Button fx:id="exitButton" layoutX="561.0" layoutY="475.0" mnemonicParsing="false" onAction="#exitGame" text="Exit" />
       <Label alignment="CENTER" layoutY="75.0" prefHeight="23.0" prefWidth="750.0" text="Oregon Trail Game" textAlignment="CENTER" AnchorPane.topAnchor="75.0">
          <font>
@@ -21,6 +21,6 @@
             <Image url="@../img/wagonMain.png" />
          </image>
       </ImageView>
-      <Label layoutX="14.0" layoutY="569.0" text="Made in JavaFX" />
+      <Label layoutX="14.0" layoutY="569.0" text="Made with JavaFX" />
    </children>
 </AnchorPane>
