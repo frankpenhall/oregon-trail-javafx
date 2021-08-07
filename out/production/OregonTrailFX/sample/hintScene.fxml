@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PickSettlerController">
+   <children>
+      <Label alignment="CENTER" layoutY="75.0" prefHeight="23.0" prefWidth="750.0" text="Hint" />
+      <Button layoutX="339.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToPickSettler" text="Back" />
+      <Label alignment="CENTER" layoutY="151.0" prefHeight="23.0" prefWidth="750.0" text="The Banker starts out with $1800, the Carpenter starts out" />
+      <Label alignment="CENTER" layoutY="174.0" prefHeight="23.0" prefWidth="750.0" text="with $1200, and the Farmer starts out with $800. " />
+      <Label alignment="CENTER" layoutY="244.0" prefHeight="23.0" prefWidth="750.0" text="The Banker has a score multiplier of x1, the Carpenter's score" />
+      <Label alignment="CENTER" layoutY="267.0" prefHeight="23.0" prefWidth="750.0" text="multiplier is x1.5, and the Farmer's score multiplier is x2." />
+      <Label alignment="CENTER" layoutX="-1.0" layoutY="335.0" prefHeight="23.0" prefWidth="750.0" text="The Banker starts out with 5 settlers, the Carpenter starts out" />
+      <Label alignment="CENTER" layoutX="-1.0" layoutY="358.0" prefHeight="23.0" prefWidth="750.0" text="with 4 settlers, and the Farmer starts out with 3." />
+   </children>
+</AnchorPane>
