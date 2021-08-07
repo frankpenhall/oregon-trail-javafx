@@ -35,13 +35,15 @@ public class EventConclusionController {
         playerMiles += 25;
         Miles.setTotalMiles(playerMiles);
 
-        if (playerMiles == 150 || playerMiles == 300 || playerMiles == 450 || playerMiles == 600 || playerMiles == 750 || playerMiles == 900 || playerMiles == 1050 || playerMiles == 1200 || playerMiles == 1350 || playerMiles == 1500 || playerMiles == 1650 || playerMiles == 1800 || playerMiles == 1950) {
+        if (playerMiles == 300 || playerMiles == 600 || playerMiles == 950 || playerMiles == 1250 || playerMiles == 1550) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlementScene.fxml"));
             try {
                 root = loader.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            VisitSettlementController visitSettlementController = loader.getController();
+            visitSettlementController.setUpScene();
         }
         else if (playerMiles == 2100) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("winGameScene.fxml"));
@@ -51,6 +53,16 @@ public class EventConclusionController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+        else if (playerMiles == 450 || playerMiles == 850 || playerMiles == 1100 || playerMiles == 1900) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("landmarkScene.fxml"));
+            try {
+                root = loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            LandmarkController landmarkController = loader.getController();
+            landmarkController.setUpScene();
         }
         else if (playerSettlers == 0 || playerInventory[0] <= 0 || playerInventory[1] <= 0 || playerInventory[2] <= 0 || playerInventory[3] <= 0 || playerInventory[4] <= 0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("gameOverScene.fxml"));

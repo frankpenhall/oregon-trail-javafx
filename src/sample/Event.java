@@ -268,7 +268,7 @@ class Event6 {
     String choice3Conclusion = "Everyone gathers branches and wood and a settler is";
     String choice3Conclusion2 = "able to craft them into useful supplies. [+2 Spare Parts]";
 
-    String imageURL = "/img/event1.png";
+    String imageURL = "/img/event6.png";
 
 
     public void makeArray() {
@@ -318,7 +318,7 @@ class Event7 {
     String choice3Conclusion = "The ox eats the extra food and seems to be doing";
     String choice3Conclusion2 = "better and able to keep up. [-3 Food]";
 
-    String imageURL = "/img/event1.png";
+    String imageURL = "/img/event7.png";
 
 
     public void makeArray() {
@@ -368,7 +368,7 @@ class Event8 {
     String choice3Conclusion = "While carefully going through the rocks, one of your wheels";
     String choice3Conclusion2 = "breaks and had to be replaced [-1 Spare Parts]";
 
-    String imageURL = "/img/event1.png";
+    String imageURL = "/img/event8.png";
 
     public void makeArray() {
         eventArr[0] = eventTitle;
@@ -416,7 +416,7 @@ class Event9 {
     String choice3Conclusion = "While swimming down, you find a chest with valuable";
     String choice3Conclusion2 = "gold and jewelry. [+40 Money]";
 
-    String imageURL = "/img/event1.png";
+    String imageURL = "/img/event9.png";
 
     public void makeArray() {
         eventArr[0] = eventTitle;
@@ -502,8 +502,8 @@ class Event11 {
     String choice2 = "2. Wish him luck and continue moving";
     String choice3 = "3. Ofer him some food";
 
-    String choice1Result = "+1 settler";
-    String choice2Result = "";
+    String choice1Result = "+1 settler 0 food";
+    String choice2Result = "0 food 0 food";
     String choice3Result = "-4 food +10 ammo";
 
     String choice1Conclusion = "The drifter gladly accepts the invitation and";
@@ -514,7 +514,7 @@ class Event11 {
     String choice3Conclusion2 = "extra ammo to you. [-4 Food] [+10 Ammo]";
 
 
-    String imageURL = "/img/event5.png";
+    String imageURL = "/img/event11.png";
 
     public void makeArray() {
         eventArr[0] = eventTitle;
@@ -551,9 +551,9 @@ class Event12 {
     String choice2 = "2. Underneath a large tree";
     String choice3 = "3. Near a large pond";
 
-    String choice1Result = "";
-    String choice2Result = "-1 oxen";
-    String choice3Result = "-1 settler";
+    String choice1Result = "0 food 0 food";
+    String choice2Result = "-1 oxen 0 food";
+    String choice3Result = "-1 settler 0 food";
 
     String choice1Conclusion = "Everyone sleeps safely throughout the thunderstorm.";
     String choice1Conclusion2 = "";
@@ -563,7 +563,7 @@ class Event12 {
     String choice3Conclusion2 = "night a settler gets shocked by lightning. [-1 Settler]";
 
 
-    String imageURL = "/img/event5.png";
+    String imageURL = "/img/event12.png";
 
     public void makeArray() {
         eventArr[0] = eventTitle;
@@ -612,7 +612,7 @@ class Event13 {
     String choice3Conclusion2 = "[+3 Food]";
 
 
-    String imageURL = "/img/event5.png";
+    String imageURL = "/img/event13.png";
 
     public void makeArray() {
         eventArr[0] = eventTitle;
@@ -643,25 +643,25 @@ class Event14 {
     String[] eventArr = new String[16];
 
     String eventTitle = "Bandits";
-    String eventDescription = "";
-    String eventDescription2 = "";
-    String choice1 = "1. ";
-    String choice2 = "2. ";
-    String choice3 = "3. ";
+    String eventDescription = "While traveling, bandits surround your wagon!";
+    String eventDescription2 = "They demand supplies, what do you do?";
+    String choice1 = "1. Let them take the food";
+    String choice2 = "2. Let them take the ox";
+    String choice3 = "3. Fight them off";
 
-    String choice1Result = "";
-    String choice2Result = "";
-    String choice3Result = "";
+    String choice1Result = "-5 food 0 food";
+    String choice2Result = "-1 ox 0 food";
+    String choice3Result = "-1 settler 0 food";
 
-    String choice1Conclusion = "";
-    String choice1Conclusion2 = "";
-    String choice2Conclusion = "";
-    String choice2Conclusion2 = "";
-    String choice3Conclusion = "";
-    String choice3Conclusion2 = "";
+    String choice1Conclusion = "You comply, not wanting to cause a fight.";
+    String choice1Conclusion2 = "The bandits steal your food. [-5 Food]";
+    String choice2Conclusion = "You comply, not wanting to cause a fight.";
+    String choice2Conclusion2 = "The bandits steal an ox. [-1 Oxen]";
+    String choice3Conclusion = "You stand up to the bandits. The fight turns ugly and";
+    String choice3Conclusion2 = "there are casualties. [-1 Settler]";
 
 
-    String imageURL = "/img/event5.png";
+    String imageURL = "/img/event14.png";
 
     public void makeArray() {
         eventArr[0] = eventTitle;
@@ -686,11 +686,12 @@ class Event14 {
         return eventArr;
     }
 }
+
 class Event15 {
 
     String[] eventArr = new String[16];
 
-    String eventTitle = "";
+    String eventTitle = "Natives";
     String eventDescription = "";
     String eventDescription2 = "";
     String choice1 = "1. ";
@@ -735,6 +736,250 @@ class Event15 {
     }
 }
 
+class Event16 {
+
+    String[] eventArr = new String[16];
+
+    String eventTitle = "Cholera";
+    String eventDescription = "";
+    String eventDescription2 = "";
+    String choice1 = "1. ";
+    String choice2 = "2. ";
+    String choice3 = "3. ";
+
+    String choice1Result = "";
+    String choice2Result = "";
+    String choice3Result = "";
+
+    String choice1Conclusion = "";
+    String choice1Conclusion2 = "";
+    String choice2Conclusion = "";
+    String choice2Conclusion2 = "";
+    String choice3Conclusion = "";
+    String choice3Conclusion2 = "";
+
+
+    String imageURL = "/img/event5.png";
+
+    public void makeArray() {
+        eventArr[0] = eventTitle;
+        eventArr[1] = eventDescription;
+        eventArr[2] = eventDescription2;
+        eventArr[3] = choice1;
+        eventArr[4] = choice2;
+        eventArr[5] = choice3;
+        eventArr[6] = choice1Result;
+        eventArr[7] = choice2Result;
+        eventArr[8] = choice3Result;
+        eventArr[9] = choice1Conclusion;
+        eventArr[10] = choice1Conclusion2;
+        eventArr[11] = choice2Conclusion;
+        eventArr[12] = choice2Conclusion2;
+        eventArr[13] = choice3Conclusion;
+        eventArr[14] = choice3Conclusion2;
+        eventArr[15] = imageURL;
+    }
+
+    public String[] getEventArray() {
+        return eventArr;
+    }
+}
+
+class Event17 {
+
+    String[] eventArr = new String[16];
+
+    String eventTitle = "Natives";
+    String eventDescription = "";
+    String eventDescription2 = "";
+    String choice1 = "1. ";
+    String choice2 = "2. ";
+    String choice3 = "3. ";
+
+    String choice1Result = "";
+    String choice2Result = "";
+    String choice3Result = "";
+
+    String choice1Conclusion = "";
+    String choice1Conclusion2 = "";
+    String choice2Conclusion = "";
+    String choice2Conclusion2 = "";
+    String choice3Conclusion = "";
+    String choice3Conclusion2 = "";
+
+
+    String imageURL = "/img/event5.png";
+
+    public void makeArray() {
+        eventArr[0] = eventTitle;
+        eventArr[1] = eventDescription;
+        eventArr[2] = eventDescription2;
+        eventArr[3] = choice1;
+        eventArr[4] = choice2;
+        eventArr[5] = choice3;
+        eventArr[6] = choice1Result;
+        eventArr[7] = choice2Result;
+        eventArr[8] = choice3Result;
+        eventArr[9] = choice1Conclusion;
+        eventArr[10] = choice1Conclusion2;
+        eventArr[11] = choice2Conclusion;
+        eventArr[12] = choice2Conclusion2;
+        eventArr[13] = choice3Conclusion;
+        eventArr[14] = choice3Conclusion2;
+        eventArr[15] = imageURL;
+    }
+
+    public String[] getEventArray() {
+        return eventArr;
+    }
+}
+
+class Event18 {
+
+    String[] eventArr = new String[16];
+
+    String eventTitle = "Natives";
+    String eventDescription = "";
+    String eventDescription2 = "";
+    String choice1 = "1. ";
+    String choice2 = "2. ";
+    String choice3 = "3. ";
+
+    String choice1Result = "";
+    String choice2Result = "";
+    String choice3Result = "";
+
+    String choice1Conclusion = "";
+    String choice1Conclusion2 = "";
+    String choice2Conclusion = "";
+    String choice2Conclusion2 = "";
+    String choice3Conclusion = "";
+    String choice3Conclusion2 = "";
+
+
+    String imageURL = "/img/event5.png";
+
+    public void makeArray() {
+        eventArr[0] = eventTitle;
+        eventArr[1] = eventDescription;
+        eventArr[2] = eventDescription2;
+        eventArr[3] = choice1;
+        eventArr[4] = choice2;
+        eventArr[5] = choice3;
+        eventArr[6] = choice1Result;
+        eventArr[7] = choice2Result;
+        eventArr[8] = choice3Result;
+        eventArr[9] = choice1Conclusion;
+        eventArr[10] = choice1Conclusion2;
+        eventArr[11] = choice2Conclusion;
+        eventArr[12] = choice2Conclusion2;
+        eventArr[13] = choice3Conclusion;
+        eventArr[14] = choice3Conclusion2;
+        eventArr[15] = imageURL;
+    }
+
+    public String[] getEventArray() {
+        return eventArr;
+    }
+}
+
+class Event19 {
+
+    String[] eventArr = new String[16];
+
+    String eventTitle = "Natives";
+    String eventDescription = "";
+    String eventDescription2 = "";
+    String choice1 = "1. ";
+    String choice2 = "2. ";
+    String choice3 = "3. ";
+
+    String choice1Result = "";
+    String choice2Result = "";
+    String choice3Result = "";
+
+    String choice1Conclusion = "";
+    String choice1Conclusion2 = "";
+    String choice2Conclusion = "";
+    String choice2Conclusion2 = "";
+    String choice3Conclusion = "";
+    String choice3Conclusion2 = "";
+
+
+    String imageURL = "/img/event5.png";
+
+    public void makeArray() {
+        eventArr[0] = eventTitle;
+        eventArr[1] = eventDescription;
+        eventArr[2] = eventDescription2;
+        eventArr[3] = choice1;
+        eventArr[4] = choice2;
+        eventArr[5] = choice3;
+        eventArr[6] = choice1Result;
+        eventArr[7] = choice2Result;
+        eventArr[8] = choice3Result;
+        eventArr[9] = choice1Conclusion;
+        eventArr[10] = choice1Conclusion2;
+        eventArr[11] = choice2Conclusion;
+        eventArr[12] = choice2Conclusion2;
+        eventArr[13] = choice3Conclusion;
+        eventArr[14] = choice3Conclusion2;
+        eventArr[15] = imageURL;
+    }
+
+    public String[] getEventArray() {
+        return eventArr;
+    }
+}
+
+class Event20 {
+
+    String[] eventArr = new String[16];
+
+    String eventTitle = "Natives";
+    String eventDescription = "";
+    String eventDescription2 = "";
+    String choice1 = "1. ";
+    String choice2 = "2. ";
+    String choice3 = "3. ";
+
+    String choice1Result = "";
+    String choice2Result = "";
+    String choice3Result = "";
+
+    String choice1Conclusion = "";
+    String choice1Conclusion2 = "";
+    String choice2Conclusion = "";
+    String choice2Conclusion2 = "";
+    String choice3Conclusion = "";
+    String choice3Conclusion2 = "";
+
+
+    String imageURL = "/img/event5.png";
+
+    public void makeArray() {
+        eventArr[0] = eventTitle;
+        eventArr[1] = eventDescription;
+        eventArr[2] = eventDescription2;
+        eventArr[3] = choice1;
+        eventArr[4] = choice2;
+        eventArr[5] = choice3;
+        eventArr[6] = choice1Result;
+        eventArr[7] = choice2Result;
+        eventArr[8] = choice3Result;
+        eventArr[9] = choice1Conclusion;
+        eventArr[10] = choice1Conclusion2;
+        eventArr[11] = choice2Conclusion;
+        eventArr[12] = choice2Conclusion2;
+        eventArr[13] = choice3Conclusion;
+        eventArr[14] = choice3Conclusion2;
+        eventArr[15] = imageURL;
+    }
+
+    public String[] getEventArray() {
+        return eventArr;
+    }
+}
 
 
 

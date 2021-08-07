@@ -43,7 +43,7 @@ public class TripMenuController {
         milesTraveledLabel.setText(String.valueOf(playerMiles));
         if (playerMiles == 0) {
             locationLabel.setText("Missouri");
-        } else if (playerMiles >= 25 && playerMiles < 200) {
+        } else if (playerMiles >= 50 && playerMiles < 200) {
             locationLabel.setText("Kansas");
         } else if (playerMiles >= 200 && playerMiles < 600) {
             locationLabel.setText("Nebraska");

@@ -80,23 +80,6 @@ public class HuntController implements Initializable {
             Bounds crosshairBox = crosshairImg.getBoundsInParent();
             Bounds deerBox = deerImg.getBoundsInParent();
             Bounds bearBox = bearImg.getBoundsInParent();
-        /*
-        double[] crosshairArr = new double[4];
-        crosshairArr[0] = crosshairBox.getMinX();
-        crosshairArr[1] = crosshairBox.getMinY();
-        crosshairArr[2] = crosshairBox.getMaxX();
-        crosshairArr[3] = crosshairBox.getMaxY();
-
-        double[] animalArr = new double[4];
-        animalArr[0] = animalBox.getMinX();
-        animalArr[1] = animalBox.getMinY();
-        animalArr[2] = animalBox.getMaxX();
-        animalArr[3] = animalBox.getMaxY();
-
-        for (int i=0; i<crosshairArr.length; i++) {
-            System.out.print(crosshairArr[i] + " ");
-        }
-        */
 
             if (crosshairBox.intersects(bearBox) && !bearShot) {
                 System.out.println("Shot Bear!");

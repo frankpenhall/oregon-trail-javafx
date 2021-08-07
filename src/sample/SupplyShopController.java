@@ -35,6 +35,22 @@ public class SupplyShopController {
     Settler settlers = new Settler();
     int playerSettlers = settlers.getSettlers();
 
+    public void switchToPickSettler(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("pickSettlerScene.fxml"));
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        String css = this.getClass().getResource("sample.css").toExternalForm();
+        scene.getStylesheets().add(css);
+        stage.show();
+    }
+
     public void switchToTripMenu(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("tripMenuScene.fxml"));
         try {

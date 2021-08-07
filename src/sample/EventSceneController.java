@@ -39,7 +39,7 @@ public class EventSceneController {
     int playerMoney = Money.getMoney();
 
     Random rand = new Random();
-    int x = rand.nextInt(11);
+    int x = rand.nextInt(15);
 
     public void option1(ActionEvent event) {
         System.out.println("You choice 1");
@@ -193,6 +193,30 @@ public class EventSceneController {
         else if (x == 10) {
             System.out.println("Event 10 Selected");
             Event10 event = new Event10();
+            event.makeArray();
+            eventArr = event.getEventArray();
+        }
+        else if (x == 11) {
+            System.out.println("Event 11 Selected");
+            Event11 event = new Event11();
+            event.makeArray();
+            eventArr = event.getEventArray();
+        }
+        else if (x == 12) {
+            System.out.println("Event 12 Selected");
+            Event12 event = new Event12();
+            event.makeArray();
+            eventArr = event.getEventArray();
+        }
+        else if (x == 13) {
+            System.out.println("Event 13 Selected");
+            Event13 event = new Event13();
+            event.makeArray();
+            eventArr = event.getEventArray();
+        }
+        else if (x == 14) {
+            System.out.println("Event 14 Selected");
+            Event14 event = new Event14();
             event.makeArray();
             eventArr = event.getEventArray();
         }

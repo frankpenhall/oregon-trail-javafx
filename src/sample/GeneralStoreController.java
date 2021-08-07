@@ -172,6 +172,8 @@ public class GeneralStoreController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        VisitSettlementController visitSettlementController = loader.getController();
+        visitSettlementController.setUpScene();
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -189,6 +191,8 @@ public class GeneralStoreController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        VisitSettlementController visitSettlementController = loader.getController();
+        visitSettlementController.setUpScene();
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
