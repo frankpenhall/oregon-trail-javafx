@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.WinGameController">
+<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.WinGameSceneController">
    <children>
       <Label alignment="CENTER" layoutY="75.0" prefHeight="23.0" prefWidth="750.0" text="Congratulations, you have completed the trail!" />
-      <Label alignment="CENTER" layoutY="125.0" prefHeight="23.0" prefWidth="750.0" text="You've made it to Oregon City, Oregon" />
-      <ImageView fitHeight="216.0" fitWidth="345.0" layoutX="200.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <Label alignment="CENTER" layoutY="125.0" prefHeight="23.0" prefWidth="750.0" text="You've made it to Oregon City, Oregon." />
+      <ImageView fitHeight="216.0" fitWidth="345.0" layoutX="203.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/oregonCity.png" />
          </image>
@@ -31,5 +31,7 @@
             <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exitGame" text="Exit" GridPane.columnIndex="1" />
          </children>
       </GridPane>
+      <Label alignment="CENTER" layoutY="395.0" prefHeight="23.0" prefWidth="750.0" text="Score:" />
+      <Label fx:id="scoreLabel" alignment="CENTER" layoutY="418.0" prefHeight="23.0" prefWidth="750.0" text="0" />
    </children>
 </AnchorPane>

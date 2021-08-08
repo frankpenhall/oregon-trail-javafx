@@ -4,8 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PickSettlerController">
+<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PickSettlerSceneController">
    <children>
       <Label alignment="CENTER" layoutY="75.0" prefHeight="23.0" prefWidth="750.0" text="Hint" />
       <Button layoutX="339.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToPickSettler" text="Back" />

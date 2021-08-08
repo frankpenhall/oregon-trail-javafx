@@ -11,14 +11,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CheckInventoryController {
+public class CheckInventorySceneController {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
-
-    @FXML
-    Label ammoInvLabel, clothesInvLabel, foodInvLabel, oxenInvLabel, sparePartsInvLabel, moneyLabel;
 
     Inventory inventory = new Inventory();
     int[] playerInventory = inventory.getInventory();
@@ -26,7 +23,10 @@ public class CheckInventoryController {
     Money money = new Money();
     int playerMoney = money.getMoney();
 
-    public void setLabels() {
+    @FXML
+    Label ammoInvLabel, clothesInvLabel, foodInvLabel, oxenInvLabel, sparePartsInvLabel, moneyLabel;
+
+    public void setScene() {
         foodInvLabel.setText(String.valueOf(playerInventory[0]));
         oxenInvLabel.setText(String.valueOf(playerInventory[1]));
         ammoInvLabel.setText(String.valueOf(playerInventory[2]));
@@ -36,16 +36,16 @@ public class CheckInventoryController {
     }
 
     public void switchToTripMenu(ActionEvent event) {
+        // Switches to the Trip Menu Scene
         FXMLLoader loader = new FXMLLoader(getClass().getResource("tripMenuScene.fxml"));
         try {
             root = loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        //playerInventory[5] = 5;
-        TripMenuController tripMenuController = loader.getController();
-        tripMenuController.setLabels();
+        // Calls the setScene method in Trip Menu before switching scenes, this set labels
+        TripMenuSceneController tripMenuSceneController = loader.getController();
+        tripMenuSceneController.setScene();
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

@@ -13,11 +13,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class VisitSettlementController {
+public class VisitSettlementSceneController {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    int playerMiles = Miles.getTotalMiles();
 
     @FXML
     Label fortTitleLabel;
@@ -25,33 +27,31 @@ public class VisitSettlementController {
     @FXML
     ImageView fortImage;
 
-    int playerMiles = Miles.getTotalMiles();
-
-    public void setUpScene() {
+    public void setScene() {
         if (playerMiles == 300) {
             fortTitleLabel.setText("Welcome to Fort Kearny!");
-            Image fortkearnyImg = new Image("/img/fortkearny.png");
-            fortImage.setImage(fortkearnyImg);
+            Image fortKearnyImg = new Image("/img/fortkearny.png");
+            fortImage.setImage(fortKearnyImg);
         }
         else if (playerMiles == 600) {
             fortTitleLabel.setText("Welcome to Fort Laramie!");
-            Image fortlaramieImg = new Image("/img/fortlaramie.png");
-            fortImage.setImage(fortlaramieImg);
+            Image fortLaramieImg = new Image("/img/fortlaramie.png");
+            fortImage.setImage(fortLaramieImg);
         }
         else if (playerMiles == 950) {
             fortTitleLabel.setText("Welcome to Fort Bridger!");
-            Image fortbridgerImg = new Image("/img/fortbridger.png");
-            fortImage.setImage(fortbridgerImg);
+            Image fortBridgerImg = new Image("/img/fortbridger.png");
+            fortImage.setImage(fortBridgerImg);
         }
         else if (playerMiles == 1250) {
             fortTitleLabel.setText("Welcome to Fort Hall!");
-            Image forthallImg = new Image("/img/forthall.png");
-            fortImage.setImage(forthallImg);
+            Image fortHallImg = new Image("/img/forthall.png");
+            fortImage.setImage(fortHallImg);
         }
         else if (playerMiles == 1550) {
             fortTitleLabel.setText("Welcome to Fort Boise!");
-            Image fortboiseImg = new Image("/img/fortboise.png");
-            fortImage.setImage(fortboiseImg);
+            Image fortBoiseImg = new Image("/img/fortboise.png");
+            fortImage.setImage(fortBoiseImg);
         }
     }
 
@@ -63,8 +63,8 @@ public class VisitSettlementController {
             e.printStackTrace();
         }
 
-        GeneralStoreController generalStoreController = loader.getController();
-        generalStoreController.setLabels();
+        GeneralStoreSceneController generalStoreSceneController = loader.getController();
+        generalStoreSceneController.setScene();
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -83,8 +83,8 @@ public class VisitSettlementController {
             e.printStackTrace();
         }
 
-        GeneralStoreController generalStoreController = loader.getController();
-        generalStoreController.setLabels();
+        GeneralStoreSceneController generalStoreSceneController = loader.getController();
+        generalStoreSceneController.setScene();
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -137,8 +137,8 @@ public class VisitSettlementController {
             e.printStackTrace();
         }
 
-        TripMenuController tripMenuController = loader.getController();
-        tripMenuController.setLabels();
+        TripMenuSceneController tripMenuSceneController = loader.getController();
+        tripMenuSceneController.setScene();
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

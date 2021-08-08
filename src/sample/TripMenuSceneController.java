@@ -12,17 +12,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class TripMenuController {
+public class TripMenuSceneController {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
-
-    @FXML
-    Label settlerLabel, milesTraveledLabel, locationLabel;
-
-    @FXML
-    Button exitButton;
 
     Inventory inventory = new Inventory();
     int[] playerInventory = inventory.getInventory();
@@ -33,12 +27,18 @@ public class TripMenuController {
     Miles miles = new Miles();
     int playerMiles = miles.getTotalMiles();
 
+    @FXML
+    Label settlerLabel, milesTraveledLabel, locationLabel;
+
+    @FXML
+    Button exitButton;
+
     public void exitGame(ActionEvent event) {
         Stage stage = (Stage) exitButton.getScene().getWindow();
         stage.close();
     }
 
-    public void setLabels() {
+    public void setScene() {
         settlerLabel.setText(String.valueOf(playerSettlers));
         milesTraveledLabel.setText(String.valueOf(playerMiles));
         if (playerMiles == 0) {
@@ -56,7 +56,7 @@ public class TripMenuController {
         }
     }
 
-    public void checkSupplies(ActionEvent event) {
+    public void checkInventory(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("checkInventoryScene.fxml"));
         try {
             root = loader.load();
@@ -64,8 +64,8 @@ public class TripMenuController {
             e.printStackTrace();
         }
 
-        CheckInventoryController checkInventoryController = loader.getController();
-        checkInventoryController.setLabels();
+        CheckInventorySceneController checkInventorySceneController = loader.getController();
+        checkInventorySceneController.setScene();
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -101,8 +101,8 @@ public class TripMenuController {
             e.printStackTrace();
         }
 
-        HuntController huntController = loader.getController();
-        huntController.setLabels();
+        HuntSceneController huntSceneController = loader.getController();
+        huntSceneController.setScene();
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -122,7 +122,7 @@ public class TripMenuController {
         }
 
         EventSceneController eventSceneController = loader.getController();
-        eventSceneController.setLabels();
+        eventSceneController.setScene();
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

@@ -21,8 +21,15 @@ public class EventSceneController {
     private Scene scene;
     private Parent root;
 
-    String[] eventOutCome = new String[2];
+    public String[] eventOutCome = new String[2];
     int choice;
+
+    int[] playerInventory = Inventory.getInventory();
+    int playerSettlers = Settler.getSettlers();
+    int playerMoney = Money.getMoney();
+
+    Random rand = new Random();
+    int x = rand.nextInt(15);
 
     String[] eventArr = new String[16];
 
@@ -32,20 +39,11 @@ public class EventSceneController {
     @FXML
     ImageView eventImage;
 
-    int[] playerInventory = Inventory.getInventory();
-
-    int playerSettlers = Settler.getSettlers();
-
-    int playerMoney = Money.getMoney();
-
-    Random rand = new Random();
-    int x = rand.nextInt(15);
-
     public void option1(ActionEvent event) {
-        System.out.println("You choice 1");
+        System.out.println("You choose 1");
         choice = 1;
 
-        computeResults(choice);
+        computeResults(choice); // calls the method to compute the results
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("eventConclusionScene.fxml"));
         try {
@@ -53,8 +51,9 @@ public class EventSceneController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        EventConclusionController eventConclusionController = loader.getController();
-        eventConclusionController.setLabels(eventOutCome);
+
+        EventConclusionSceneController eventConclusionSceneController = loader.getController();
+        eventConclusionSceneController.setScene(eventOutCome);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -66,10 +65,10 @@ public class EventSceneController {
     }
 
     public void option2(ActionEvent event) {
-        System.out.println("You choice 2");
+        System.out.println("You choose 2");
         choice = 2;
 
-        computeResults(choice);
+        computeResults(choice); // calls the method to compute the results
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("eventConclusionScene.fxml"));
         try {
@@ -77,8 +76,8 @@ public class EventSceneController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        EventConclusionController eventConclusionController = loader.getController();
-        eventConclusionController.setLabels(eventOutCome);
+        EventConclusionSceneController eventConclusionSceneController = loader.getController();
+        eventConclusionSceneController.setScene(eventOutCome);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -90,10 +89,10 @@ public class EventSceneController {
     }
 
     public void option3(ActionEvent event) {
-        System.out.println("You choice 3");
+        System.out.println("You choose 3");
         choice = 3;
 
-        computeResults(choice);
+        computeResults(choice); // calls the method to compute the results
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("eventConclusionScene.fxml"));
         try {
@@ -101,8 +100,8 @@ public class EventSceneController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        EventConclusionController eventConclusionController = loader.getController();
-        eventConclusionController.setLabels(eventOutCome);
+        EventConclusionSceneController eventConclusionSceneController = loader.getController();
+        eventConclusionSceneController.setScene(eventOutCome);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -113,9 +112,8 @@ public class EventSceneController {
         stage.show();
     }
 
-    public void setLabels() {
-        setUpEvent();
-        //System.out.println("Setting labels");
+    public void setScene() {
+        setEvent();
         eventTitleLabel.setText(eventArr[0]);
         eventDescriptionLabel.setText(eventArr[1]);
         eventDescriptionLabel2.setText(eventArr[2]);
@@ -128,8 +126,8 @@ public class EventSceneController {
         eventImage.setImage(image);
     }
 
-    public void setUpEvent() {
-        System.out.println(x);
+    public void setEvent() {
+        // Selects the event depending on the random integer value
         if (x == 0) {
             System.out.println("Event 1 Selected");
             Event event = new Event();
@@ -223,24 +221,23 @@ public class EventSceneController {
     }
 
     public void computeResults(int choice) {
+        // Computes the results of the choice by using String manipulation
         String[] strArr;
         if (choice == 1) {
-            //System.out.println("You picked 1");
             System.out.println(eventArr[6]);
             strArr = eventArr[6].split(" ", 4);
             System.out.println(Arrays.toString(strArr));
             eventOutCome[0] = eventArr[9];
             eventOutCome[1] = eventArr[10];
-
-        } else if (choice == 2) {
-            //System.out.println("You picked 2");
+        }
+        else if (choice == 2) {
             System.out.println(eventArr[7]);
             strArr = eventArr[7].split(" ", 4);
             System.out.println(Arrays.toString(strArr));
             eventOutCome[0] = eventArr[11];
             eventOutCome[1] = eventArr[12];
-        } else {
-            //System.out.println("You picked 3");
+        }
+        else {
             System.out.println(eventArr[8]);
             strArr = eventArr[8].split(" ", 4);
             System.out.println(Arrays.toString(strArr));
@@ -250,7 +247,6 @@ public class EventSceneController {
 
         for (int i=0; i<3; i += 2) {
             switch (strArr[i+1]) {
-                // add if statement to check if player has enough to exchange
                 case "food" -> playerInventory[0] += Integer.parseInt(strArr[i]);
                 case "oxen" -> playerInventory[1] += Integer.parseInt(strArr[i]);
                 case "ammo" -> playerInventory[2] += Integer.parseInt(strArr[i]);
@@ -263,5 +259,4 @@ public class EventSceneController {
         Settler.setSettlers(playerSettlers);
         Money.setMoney(playerMoney);
     }
-
 }

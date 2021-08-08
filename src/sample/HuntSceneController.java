@@ -20,11 +20,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HuntController implements Initializable {
+public class HuntSceneController implements Initializable {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    int[] playerInventory = Inventory.getInventory();
+    Image blankImg = new Image("/img/blank.png");
+
+    private boolean bearShot, deerShot;
     
     @FXML
     Label ammoCountLabel, foodCountLabel;
@@ -32,13 +37,9 @@ public class HuntController implements Initializable {
     @FXML
     ImageView crosshairImg, bearImg, deerImg, emptyImg;
 
-    int[] playerInventory = Inventory.getInventory();
-    Image blankImg = new Image("/img/blank.png");
-
-    boolean bearShot, deerShot;
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // animates the crosshair image
         TranslateTransition translate = new TranslateTransition();
         translate.setNode(crosshairImg);
         translate.setDuration(Duration.millis(1500));
@@ -48,7 +49,36 @@ public class HuntController implements Initializable {
         translate.play();
     }
 
-    public void setLabels() {
+    public void shoot() {
+        if (playerInventory[2] > 0) {
+            playerInventory[2] -= 1;
+            ammoCountLabel.setText(String.valueOf(playerInventory[2]));
+            Bounds crosshairBox = crosshairImg.getBoundsInParent();
+            Bounds deerBox = deerImg.getBoundsInParent();
+            Bounds bearBox = bearImg.getBoundsInParent();
+
+            /*
+            if the crosshair image overlaps onto of the bear image, then add food to inventory
+            and remove the bear by replacing the image with a black image
+             */
+            if (crosshairBox.intersects(bearBox) && !bearShot) {
+                System.out.println("Shot Bear!");
+                bearImg.setImage(blankImg);
+                bearShot = true;
+                playerInventory[0] += 3;
+                foodCountLabel.setText(String.valueOf(playerInventory[0]));
+            }
+            if (crosshairBox.intersects(deerBox) && !deerShot) {
+                System.out.println("Shot Deer!");
+                deerImg.setImage(blankImg);
+                deerShot = true;
+                playerInventory[0] += 3;
+                foodCountLabel.setText(String.valueOf(playerInventory[0]));
+            }
+        }
+    }
+
+    public void setScene() {
         ammoCountLabel.setText(String.valueOf(playerInventory[2]));
         foodCountLabel.setText(String.valueOf(playerInventory[0]));
     }
@@ -61,8 +91,8 @@ public class HuntController implements Initializable {
             e.printStackTrace();
         }
 
-        TripMenuController tripMenuController = loader.getController();
-        tripMenuController.setLabels();
+        TripMenuSceneController tripMenuSceneController = loader.getController();
+        tripMenuSceneController.setScene();
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -73,30 +103,4 @@ public class HuntController implements Initializable {
         stage.show();
     }
 
-    public void shoot() {
-        if (playerInventory[2] > 0) {
-            playerInventory[2] -= 1;
-            ammoCountLabel.setText(String.valueOf(playerInventory[2]));
-            Bounds crosshairBox = crosshairImg.getBoundsInParent();
-            Bounds deerBox = deerImg.getBoundsInParent();
-            Bounds bearBox = bearImg.getBoundsInParent();
-
-            if (crosshairBox.intersects(bearBox) && !bearShot) {
-                System.out.println("Shot Bear!");
-                bearImg.setImage(blankImg);
-                bearShot = true;
-                playerInventory[0] += 3;
-                foodCountLabel.setText(String.valueOf(playerInventory[0]));
-
-            }
-            if (crosshairBox.intersects(deerBox) && !deerShot) {
-                System.out.println("Shot Deer!");
-                deerImg.setImage(blankImg);
-                deerShot = true;
-                playerInventory[0] += 3;
-                foodCountLabel.setText(String.valueOf(playerInventory[0]));
-
-            }
-        }
-    }
 }

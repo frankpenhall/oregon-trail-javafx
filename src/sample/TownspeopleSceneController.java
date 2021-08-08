@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class TownspeopleController {
+public class TownspeopleSceneController {
 
     private Stage stage;
     private Scene scene;
@@ -25,8 +25,8 @@ public class TownspeopleController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        VisitSettlementController visitSettlementController = loader.getController();
-        visitSettlementController.setUpScene();
+        VisitSettlementSceneController visitSettlementSceneController = loader.getController();
+        visitSettlementSceneController.setScene();
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -39,16 +39,18 @@ public class TownspeopleController {
 
     public void addSettler(ActionEvent event) {
         playerSettlers += 1;
-        settlers.setSettlers(playerSettlers);
+        Settler.setSettlers(playerSettlers);
 
+        // switch to the other visit settlement scene if player recruits a settler
+        // this is to prevent the player from recruiting multiple settlers
         FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlementScene2.fxml"));
         try {
             root = loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        VisitSettlementController visitSettlementController = loader.getController();
-        visitSettlementController.setUpScene();
+        VisitSettlementSceneController visitSettlementSceneController = loader.getController();
+        visitSettlementSceneController.setScene();
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -66,8 +68,8 @@ public class TownspeopleController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        VisitSettlementController visitSettlementController = loader.getController();
-        visitSettlementController.setUpScene();
+        VisitSettlementSceneController visitSettlementSceneController = loader.getController();
+        visitSettlementSceneController.setScene();
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

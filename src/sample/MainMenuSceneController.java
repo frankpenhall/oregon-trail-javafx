@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SceneController {
+public class MainMenuSceneController {
 
     private Stage stage;
     private Scene scene;
@@ -25,7 +25,7 @@ public class SceneController {
         stage.close();
     }
 
-    public void switchToSettlerSetup(ActionEvent event) {
+    public void switchToPickSettler(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("pickSettlerScene.fxml"));
         try {
             root = loader.load();

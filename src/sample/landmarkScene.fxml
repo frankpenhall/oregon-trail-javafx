@@ -6,8 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LandmarkController">
+<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LandmarkSceneController">
    <children>
       <Label fx:id="landmarkTitleLabel" alignment="CENTER" layoutY="75.0" prefHeight="18.0" prefWidth="750.0" text="Landmark Title" />
       <Label fx:id="landmarkDesLabel" alignment="CENTER" layoutY="361.0" prefHeight="23.0" prefWidth="750.0" text="Landmark Description" />
@@ -17,5 +16,6 @@
          </image>
       </ImageView>
       <Button layoutX="317.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToTripMenu" text="Continue" />
+      <Label fx:id="landmarkDesLabel2" alignment="CENTER" layoutY="384.0" prefHeight="23.0" prefWidth="750.0" text="Landmark Description" />
    </children>
 </AnchorPane>

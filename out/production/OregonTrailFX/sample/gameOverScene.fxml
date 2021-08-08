@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GameOverController">
+<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GameOverSceneController">
    <children>
       <Label alignment="CENTER" layoutY="75.0" prefHeight="23.0" prefWidth="750.0" text="Game Over!" />
       <Label fx:id="gameOverLabel" alignment="CENTER" layoutY="119.0" prefHeight="23.0" prefWidth="750.0" text="Game Over Message" />
-      <ImageView fitHeight="213.0" fitWidth="289.0" layoutX="231.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="195.0" fitWidth="258.0" layoutX="246.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/wagonBW.png" />
          </image>
@@ -32,5 +32,7 @@
          </children>
       </GridPane>
       <Label fx:id="gameOverLabel2" alignment="CENTER" layoutY="142.0" prefHeight="23.0" prefWidth="750.0" text="Game Over Message" />
+      <Label alignment="CENTER" layoutY="393.0" prefHeight="23.0" prefWidth="750.0" text="Score:" />
+      <Label fx:id="scoreLabel" alignment="CENTER" layoutY="416.0" prefHeight="23.0" prefWidth="750.0" text="0" />
    </children>
 </AnchorPane>

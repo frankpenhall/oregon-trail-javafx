@@ -20,7 +20,7 @@ public class Main extends Application {
         scene.getStylesheets().add(css);
         stage.show();
 
-        System.out.println(javafx.scene.text.Font.getFamilies());
+        //System.out.println(javafx.scene.text.Font.getFamilies());
     }
 
     public static void main(String[] args) {
@@ -31,8 +31,5 @@ public class Main extends Application {
 
 Add more events (14/50 events total)
 Have Player Stats displayed at the gameOver and winGame
-Implement PlayerScore, player gets points for how far they get and their stats (1.5x points/2x points for medium/hard difficulty)
-Rename classes and files to better understandability
-Comment Code for readability
 
  */

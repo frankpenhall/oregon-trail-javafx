@@ -12,23 +12,23 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class GameOverController {
+public class GameOverSceneController {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
 
+    int[] playerInventory = Inventory.getInventory();
+    int playerSettlers = Settler.getSettlers();
+
     @FXML
     Button exitButton;
 
     @FXML
-    Label gameOverLabel, gameOverLabel2;
-
-    int[] playerInventory = Inventory.getInventory();
-
-    int playerSettlers = Settler.getSettlers();
+    Label gameOverLabel, gameOverLabel2, scoreLabel;
 
     public void switchToMainMenu(ActionEvent event) {
+        // first sets all player stats to default values
         playerInventory[0] = 0;
         playerInventory[1] = 0;
         playerInventory[2] = 0;
@@ -37,6 +37,7 @@ public class GameOverController {
         Money.setMoney(1200);
         Settler.setSettlers(5);
         Miles.setTotalMiles(0);
+        PlayerScore.setScore(0);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("mainMenuScene.fxml"));
         try {
@@ -59,7 +60,18 @@ public class GameOverController {
         stage.close();
     }
 
-    public void setUpScene() {
+    public void setScene() {
+        // multiples the player score depending on the selected difficulty
+        if (PlayerScore.getDifficulty().equals("Banker")) {
+            scoreLabel.setText(String.valueOf(PlayerScore.getScore()));
+        }
+        else if (PlayerScore.getDifficulty().equals("Carpenter")) {
+            scoreLabel.setText(String.valueOf(PlayerScore.getScore() * 1.5));
+        }
+        else if (PlayerScore.getDifficulty().equals("Farmer")) {
+            scoreLabel.setText(String.valueOf(PlayerScore.getScore() * 2));
+        }
+        // set the game over message
         if (playerInventory[0] <= 0) {
             gameOverLabel.setText("You ran out of food while traveling.");
             gameOverLabel2.setText("You and your settlers all starved!");
@@ -78,19 +90,16 @@ public class GameOverController {
         else if (playerInventory[3] <= 0) {
             gameOverLabel.setText("You ran out of extra clothes for the winter.");
             gameOverLabel2.setText("");
-
         }
 
         else if (playerInventory[4] <= 0) {
             gameOverLabel.setText("You ran out of spare parts for your wagon.");
             gameOverLabel2.setText("");
-
         }
 
         else if (playerSettlers <= 0) {
             gameOverLabel.setText("All of your settlers perished!");
             gameOverLabel2.setText("");
-
         }
     }
 }

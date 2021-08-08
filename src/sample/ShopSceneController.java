@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class GeneralStoreController {
+public class ShopSceneController {
 
     private Stage stage;
     private Scene scene;
@@ -21,16 +21,57 @@ public class GeneralStoreController {
     private int ammoInv, clothesInv, foodInv, oxenInv, sparePartsInv;
     private int totalCost;
 
+    Inventory inventory = new Inventory();
+    int[] playerInventory = inventory.getInventory();
+
+    Money money = new Money();
+    int playerMoney = money.getMoney();
+
+    Settler settlers = new Settler();
+    int playerSettlers = settlers.getSettlers();
+
     @FXML
     Label ammoInvLabel, clothesInvLabel, foodInvLabel, oxenInvLabel, sparePartsInvLabel, totalCostLabel, moneyLabel;
     @FXML
     Label ammoCountLabel, clothesCountLabel, foodCountLabel, oxenCountLabel, sparePartsCountLabel;
 
-    int[] playerInventory = Inventory.getInventory();
+    public void switchToPickSettler(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("pickSettlerScene.fxml"));
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-    int playerMoney = Money.getMoney();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        String css = this.getClass().getResource("sample.css").toExternalForm();
+        scene.getStylesheets().add(css);
+        stage.show();
+    }
 
-    public void setLabels() {
+    public void switchToTripMenu(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("tripMenuScene.fxml"));
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        TripMenuSceneController tripMenuSceneController = loader.getController();
+        tripMenuSceneController.setScene();
+
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        String css = this.getClass().getResource("sample.css").toExternalForm();
+        scene.getStylesheets().add(css);
+        stage.show();
+    }
+
+    public void setScene() {
         foodInvLabel.setText(String.valueOf(playerInventory[0]));
         oxenInvLabel.setText(String.valueOf(playerInventory[1]));
         ammoInvLabel.setText(String.valueOf(playerInventory[2]));
@@ -39,17 +80,18 @@ public class GeneralStoreController {
         moneyLabel.setText(String.valueOf(playerMoney));
     }
 
-    public void purchaseSupplies() {
-        if (playerMoney < totalCost) {
+    public void purchaseSupplies(ActionEvent event) {
+        if (playerMoney < totalCost) { // checks if the player has enough money to make purchase
             System.out.println("Not enough money");
         }
         else {
-            playerMoney -= totalCost;
+            playerMoney -= totalCost; // subtract money from cost
+
 
             System.out.println(playerMoney);
-            Money.setMoney(playerMoney);
+            money.setMoney(playerMoney); // set new amount of money left
 
-            foodInv += foodCount;
+            foodInv += foodCount; // change food inventory depending on the amount of food selected from purchase
             foodCountLabel.setText("0");
             foodCount = 0;
 
@@ -80,11 +122,12 @@ public class GeneralStoreController {
             playerInventory[5] = 5;
         }
 
-        setLabels();
+        setScene(); // refresh the labels
 
-        Inventory.setInventory(playerInventory);
-        Inventory.printInventory();
+        inventory.setInventory(playerInventory);
+        inventory.printInventory();
     }
+
     public void incrementFood(ActionEvent event) {
         foodCount++;
         foodCountLabel.setText(String.valueOf(foodCount));
@@ -163,44 +206,6 @@ public class GeneralStoreController {
             totalCost -= 15;
             totalCostLabel.setText(String.valueOf(totalCost));
         }
-    }
-
-    public void switchToVisit(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlementScene.fxml"));
-        try {
-            root = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        VisitSettlementController visitSettlementController = loader.getController();
-        visitSettlementController.setUpScene();
-
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        String css = this.getClass().getResource("sample.css").toExternalForm();
-        scene.getStylesheets().add(css);
-        stage.show();
-    }
-
-    public void switchToVisit2(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("visitSettlementScene2.fxml"));
-        try {
-            root = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        VisitSettlementController visitSettlementController = loader.getController();
-        visitSettlementController.setUpScene();
-
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        String css = this.getClass().getResource("sample.css").toExternalForm();
-        scene.getStylesheets().add(css);
-        stage.show();
     }
 
 }

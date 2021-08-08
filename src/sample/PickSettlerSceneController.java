@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class PickSettlerController {
+public class PickSettlerSceneController {
 
     private Stage stage;
     private Scene scene;
@@ -23,16 +23,16 @@ public class PickSettlerController {
     @FXML
     RadioButton radioBanker, radioCarpenter, radioFarmer;
 
-    public void switchToSupplyShop(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("supplyShopScene.fxml"));
+    public void switchToShop(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("shopScene.fxml"));
         try {
             root = loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        SupplyShopController supplyShopController = loader.getController();
-        supplyShopController.setLabels();
+        ShopSceneController shopSceneController = loader.getController();
+        shopSceneController.setScene();
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -65,18 +65,21 @@ public class PickSettlerController {
             System.out.println("You choose banker");
             Money.setMoney(1600);
             Settler.setSettlers(5);
+            PlayerScore.setDifficulty("Banker");
         }
         else if (radioCarpenter.isSelected()) {
             System.out.println("You choose carpenter");
             Money.setMoney(1200);
             Settler.setSettlers(4);
+            PlayerScore.setDifficulty("Carpenter");
+
         }
         else if (radioFarmer.isSelected()) {
             System.out.println("You choose farmer");
             Money.setMoney(800);
             Settler.setSettlers(3);
+            PlayerScore.setDifficulty("Farmer");
         }
-
     }
 
     public void switchToHintScene(ActionEvent event) {

@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ViewMapController {
+public class ViewMapSceneController {
 
     private Stage stage;
     private Scene scene;
@@ -26,9 +26,8 @@ public class ViewMapController {
             e.printStackTrace();
         }
 
-        //playerInventory[5] = 5;
-        TripMenuController tripMenuController = loader.getController();
-        tripMenuController.setLabels();
+        TripMenuSceneController tripMenuSceneController = loader.getController();
+        tripMenuSceneController.setScene();
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

@@ -7,11 +7,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class WinGameController {
+public class WinGameSceneController {
 
     private Stage stage;
     private Scene scene;
@@ -22,7 +23,24 @@ public class WinGameController {
     @FXML
     Button exitButton;
 
+    @FXML
+    Label scoreLabel;
+
+    public void setScene() {
+        // multiples the player score depending on the selected difficulty
+        if (PlayerScore.getDifficulty().equals("Banker")) {
+            scoreLabel.setText(String.valueOf(PlayerScore.getScore()));
+        }
+        else if (PlayerScore.getDifficulty().equals("Carpenter")) {
+            scoreLabel.setText(String.valueOf(PlayerScore.getScore() * 1.5));
+        }
+        else if (PlayerScore.getDifficulty().equals("Farmer")) {
+            scoreLabel.setText(String.valueOf(PlayerScore.getScore() * 2));
+        }
+    }
+
     public void switchToMainMenu(ActionEvent event) {
+        // reset player stats to default
         playerInventory[0] = 0;
         playerInventory[1] = 0;
         playerInventory[2] = 0;

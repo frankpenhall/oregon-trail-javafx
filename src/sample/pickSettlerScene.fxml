@@ -9,10 +9,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PickSettlerController">
+<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PickSettlerSceneController">
    <children>
       <Label alignment="CENTER" layoutY="75.0" prefHeight="23.0" prefWidth="750.0" text="Pick Settler" textAlignment="CENTER" />
-      <Button layoutX="177.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToSupplyShop" text="Continue" />
+      <Button layoutX="177.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToShop" text="Continue" />
       <Button layoutX="434.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="Back to Menu" />
       <RadioButton fx:id="radioBanker" layoutX="117.0" layoutY="394.0" mnemonicParsing="false" onAction="#pickDifficulty" selected="true" text="Banker" textFill="WHITE">
          <font>
