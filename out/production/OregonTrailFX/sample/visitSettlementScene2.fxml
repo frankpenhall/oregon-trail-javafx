@@ -6,10 +6,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.VisitSettlementController">
+<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.VisitSettlementSceneController">
    <children>
       <Label fx:id="fortTitleLabel" alignment="CENTER" layoutY="75.0" prefHeight="23.0" prefWidth="750.0" text="Fort Title Label" />
-      <Label alignment="CENTER" layoutY="331.0" prefHeight="23.0" prefWidth="750.0" text="You have encountered a settlement!" />
       <Label layoutX="14.0" layoutY="396.0" />
       <Button layoutX="290.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToStore2" text="General Store" />
       <Button layoutX="57.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToTripMenu" text="Continue on Trail" />
