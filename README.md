@@ -1,17 +1,17 @@
 # oregon-trail-javafx
 ##### About
-This is a work-in-progress recreation of the classic Oregon Trail Game made using JavaFX.
-In this recreation, you can buy supplies for your trip and encounter random events on the trail.
-In this current version most of the mechanics have been implemented but there is some missing such as the Hunting mechanic.
+This is a work-in-progress choice-driven game inspired by the classic Oregon Trail Game made using JavaFX.
+In this game, you can buy supplies for your trip, encounter random events on the trail, and hunt for food.
+In this current version most of the mechanics have been implemented.
 
 ##### To Do:
 - Add more events
-- Implement a PlayerScore, player earns points throughout the game
 - Display player stats at the end of the game
 - Add in sounds and music
+- Balance the game around the difficulties
 
 ##### Credits
-Original Oregon Trail creators: Don Rawitsch, Bill Heinemann, and Paul Dillenberge
+Original Oregon Trail game creators: Don Rawitsch, Bill Heinemann, and Paul Dillenberge
 
 ##### Screenshots
 
