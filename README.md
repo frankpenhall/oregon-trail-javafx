@@ -5,10 +5,8 @@ In this recreation, you can buy supplies for your trip and encounter random even
 In this current version most of the mechanics have been implemented but there is some missing such as the Hunting mechanic.
 
 ##### To Do:
-- Implement different difficulties based on the settler chosen
 - Add more events
 - Implement a PlayerScore, player earns points throughout the game
-- Add in the View Map function
 - Display player stats at the end of the game
 - Add in sounds and music
 
